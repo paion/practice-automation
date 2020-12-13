@@ -1,6 +1,5 @@
 package practice;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rest.assured.pojo.Category;
 import com.rest.assured.pojo.Pet;
 import com.rest.assured.pojo.Tags;
@@ -21,8 +20,6 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RestAssuredPost {
-
-
 
     @Test
     public static void makePostCallForUploadImageToPetStore() throws MalformedURLException {
@@ -83,28 +80,7 @@ public class RestAssuredPost {
         assertThat(body.query("/category/name")).isEqualTo("Tommy1");
         assertThat(body.get("status")).isEqualTo("Available");
 
-
-
-
     }
-    /*{
-  "id": 9222968140491052000,
-  "category": {
-    "id": 0,
-    "name": "string"
-  },
-  "name": "doggie",
-  "photoUrls": [
-    "string"
-  ],
-  "tags": [
-    {
-      "id": 0,
-      "name": "string"
-    }
-  ],
-  "status": "available"
-}*/
 
 
     static String body = "{\n" +
